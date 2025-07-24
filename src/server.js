@@ -31,7 +31,7 @@ app.post('/nexon-email', async (req, res) => {
     const info = await transporter.sendMail({
       from: `"${name}" <${process.env.NEXON_EMAIL}>`,
       to: process.env.NEXON_EMAIL,
-      subject,
+      subject: `${subject} - ${name}`,
       html,
     });
 
