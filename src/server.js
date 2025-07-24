@@ -16,21 +16,21 @@ app.get('/', (req, res) => {
 });
 
 // ✅ Email sending route
-app.post('/send-email', async (req, res) => {
-  const { subject, html } = req.body;
+app.post('/nexon-email', async (req, res) => {
+  const { subject, html, name } = req.body;
 
   try {
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: process.env.EMAIL,
-        pass: process.env.PASSWORD,
+        user: process.env.NEXON_EMAIL,
+        pass: process.env.NEXON_PASSWORD,
       },
     });
 
     const info = await transporter.sendMail({
-      from: `"Nishaanth" <${process.env.EMAIL}>`,
-      to: process.env.EMAIL,
+      from: `"${name}" <${process.env.NEXON_EMAIL}>`,
+      to: process.env.NEXON_EMAIL,
       subject,
       html,
     });
