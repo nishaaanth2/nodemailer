@@ -5,8 +5,12 @@
   "type": "module",
 
   "dependencies": {
-    "nodemailer": "^6.9.0"
+    "express": "^4.18.2",
+    "nodemailer": "^6.9.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1"
   },
+  
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nishaaanth2/nodemailer.git"
